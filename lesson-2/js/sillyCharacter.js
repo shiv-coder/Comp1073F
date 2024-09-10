@@ -47,7 +47,8 @@ function generateCharacter() {
     favoriteFood =["Pizza","Burger","Sushi","Ice Cream"][Math.floor(Math.random()*4)];
     isSuperher0 = Math.random() > 0.5;
 
-    const powers = specialPowers[Math.floor(Math.random()) * specialPowers.length];
+    const powers = specialPowers[Math.floor(Math.random() * specialPowers.length)];
+    console.log(powers);
     
     const description = `
         Meet ${characterName}, a ${age}-year-old ${isSuperhero ? "superhero" : "regular person"} 
