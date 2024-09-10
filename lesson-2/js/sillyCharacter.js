@@ -14,7 +14,7 @@ Users will have the option to update some of these variables, like
 changing the character’s name or age.
 
 Use different data types for each attribute:
-Name (string)
+characterName (string)
 Age (number)
 Is the character a superhero? (boolean)
 Special powers (array)
@@ -42,22 +42,33 @@ let specialPowers = ["Invisibility", "Super Strength", "Flying"];
 
 // Function to generate a random character description
 function generateCharacter() {
-    
+    characterName = `Character ${Math.floor(Math.random()*100)}`;
+    age = Math.floor(Math.random()*100);
+    favoriteFood =["Pizza","Burger","Sushi","Ice Cream"][Math.floor(Math.random()*4)];
+    isSuperher0 = Math.random() > 0.5;
 
-    // const description = `
-    //     Meet ${characterName}, a ${age}-year-old ${isSuperhero ? "superhero" : "regular person"} 
-    //     who loves ${favoriteFood} and has the power of ${powers}!
-    // `;
+    const powers = specialPowers[Math.floor(Math.random()) * specialPowers.length];
+    
+    const description = `
+        Meet ${characterName}, a ${age}-year-old ${isSuperhero ? "superhero" : "regular person"} 
+        who loves ${favoriteFood} and has the power of ${powers}!
+    `;
     document.querySelector("#characterDescription").innerText = description;
 }
 
 // Functions to update character's age
 function increaseAge() {
-    
+    console.log(age);
+    age++;
+    console.log(age);
+    updateCharacterDescription();
 }
 
 function decreaseAge() {
-    
+    console.log(age);
+    age--;
+    console.log(age);
+    updateCharacterDescription();
 }
 
 // Function to update the character's description after changing age
