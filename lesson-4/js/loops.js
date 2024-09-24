@@ -2,11 +2,26 @@ let courses = ['Intro to Web Programming', 'Client-Side JavaScript', 'Bitmap & V
 let courseList = 'My courses this term are ';
 const msg = document.querySelector('#courses');
 /* STEP 1a: A simple FOR loop
-A simple loop of this structure needs an initializer (counter variable), an exit conditional, and and incrementor/decrementor */
+A simple loop of this structure needs an initializer (counter variable), 
+an exit conditional, and and incrementor/decrementor */
+for(let i=0;i<courses.length;i++){
+	if( i === courses.length-1){
+		courseList += `and ${courses[i]}.`;
+	}else{
+		courseList += `${courses[i]}, `;
+	}
 
+}
 msg.textContent = courseList;
-// STEP 1b: Add a conditional for the last item in the array so we can finish the sentence with a period.
-
+// STEP 1b: Add a conditional for the last item in the array so we can finish the 
+//sentence with a period.
+// let fruits = ['apple','banana','cherry'];
+// for(let fruit of fruits){
+// 	console.log(fruit);
+// }
+// for(let index in fruits ){
+// 	console.log(fruits);
+// }
 /* STEP 2: Exit a loop with break */
 let cities = ['Toronto', 'Montreal', 'Ottawa', 'Vancouver', 'Halifax'];
 const result = document.querySelector('#searchResult');
@@ -18,7 +33,16 @@ btn.addEventListener('click', function() {
 	input.value = '';
 	input.focus();
 	/* STEP 2a: Create a FOR loop to iterate through the cities array */
+for(let i=0; i<cities.length;i++){
+	//console.log(cities[i]);
 
+if(searchName === cities[i]){
+	result.textContent = `${searchName} is in the list of cities`;
+	break;
+}else {
+	result.textContent = `${searchName} The city you typed is not in the list of cities`;
+}
+}
 		/* STEP 2b: Build an IF/ELSE conditional that compares searchName with cities[i] */
 
 });
@@ -30,12 +54,25 @@ const numberList = document.querySelector('#numberList');
 let num = 50;
 for (let i = 1; i <= num; i ++) {
 	let sqRoot = Math.sqrt(i);
-	/* STEP 3a: Build an IF statement that checks whether the square root of the number is NOT an integer */
-	//if () {
-		/* STEP 3b: If the square root of the number is not an integer, we don't want to output it to the paragraph, so skip the rest of the instructions inside this loop and go back up to the FOR, using 'continue' */
+	/* STEP 3a: Build an IF statement that checks whether the square root of the 
+	number is NOT an integer */
+	if (Math.floor(sqRoot !== sqRoot)) {
+		/* STEP 3b: If the square root of the number is not an integer, 
+		we don't want to output it to the paragraph, so skip 
+		the rest of the instructions inside this loop and 
+		go back up to the FOR, using 'continue' */
+		continue;
 
-	//}
+	}
 	numberList.textContent += i + ' ';
+}
+
+//Another Example of continue
+for(let i =0;i<5;i++){
+	if(i==2){
+		continue;
+	}
+	console.log(i);
 }
 
 /* STEP 4: WHILE and DO/WHILE loops */
