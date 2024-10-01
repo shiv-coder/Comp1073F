@@ -22,11 +22,11 @@
 }
 /* JavaScript classes for interaction */
 .error {
-    background-color: lightcoral;
+    background-color: rgb(241, 8, 8);
 }
 .warning {
     background-color: lightsalmon;
 }
 .default {
-    background-color: lightblue;
+    background-color: rgb(173, 230, 193);
 }
