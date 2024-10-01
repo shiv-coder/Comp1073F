@@ -67,7 +67,7 @@ for (let i = 1; i <= num; i ++) {
 	numberList.textContent += i + ' ';
 }
 
-//Another Example of continue
+//Another Example of co
 for(let i =0;i<5;i++){
 	if(i==2){
 		continue;
@@ -77,16 +77,22 @@ for(let i =0;i<5;i++){
 
 /* STEP 4: WHILE and DO/WHILE loops */
 
-let j = 0;
-let outputWhile = '';
-/* STEP 4a: WHILE loop to iterate through the cities array (created above in STEP 2) */
+// let j = 0;
+// let outputWhile = '';
+// /* STEP 4a: WHILE loop to iterate through the cities array (created above in STEP 2) */
+// while(j< cities.length){
+// outputWhile += `${cities[j]}  `;
+// j++;
+// }
+// console.log(outputWhile);
 
-console.log(outputWhile);
 
-let k = 0;
+let k = cities.length-1;
 var outputDo = '';
 /* STEP 4b: DO/WHILE loop - grab the above IF/ELSE and the 'i++', then create the very same output with DO/WHILE (uncomment the above 'i = 0', first) */
-
+do{
+	outputDo += `${cities[k]}`;
+}while(k<0)
 console.log(outputDo);
 /* …now try to loop through the same array backwards! */
 
