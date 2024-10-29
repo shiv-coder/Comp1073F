@@ -1,9 +1,29 @@
 const output = document.getElementById('output');
 
 /* STEP 1a: Create a new object using a regular function */
-
+// function createAlbum(name){
+//     const obje ={};
+//     obje.name = name;
+//     obje.describe = function(){
+//         alert(`The album is called ${this.name}`);
+//     };
+//     return obje;
+// }
+// let Album1 =createAlbum('Thriller');
+// Album1.describe();
 
 /* STEP 1b: Use the console to create a new vehicle object, and then invoke the function represented using .description() */
+// function Album(name){
+//     this.name;
+//     Album.prototype.describe = function(){
+//         alert(`The album is called ${this.name}`);
+//     }
+// }
+
+// let album1 = new Album('thriller');
+// let album2 = new Album('Back in back');
+// album1.describe();
+// album2.describe();
 
 
 /* STEP 2a: In order to be a bit more concise, JavaScript allows us to use constructor functions - rewrite the above function, without returning anything. Capitalize the name of the function. */
@@ -13,7 +33,18 @@ const output = document.getElementById('output');
 
 
 /* STEP 3a: Build the complete constructor for the object Vehicle (comment out the above functions first). Include full vehicle name (manufacturer and model), year, type, colour, and description (function). */
+function Album(name,artist,year,numTracks){
+this.name = name;
+this.artist=artist;
+this.year = year;
+this.numTracks = numTracks;
+Album.prototype.description = function(){
+    let description = `The album ${this.name} by ${artist} was released in ${this.year}`;
+    return description;
+}
+}
 
+const album3 = new Album('Substance','New Order',197,24);
 
 
 /* STEP 3b: Instantiate a new Album (or 2) based on the above constructor */
